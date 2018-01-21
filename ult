@@ -1,0 +1,20 @@
+
+[1mFrom:[0m /home/dima/RubymineProjects/TTmath/math_system/app/controllers/tasks_controller.rb @ line 14 TasksController#create:
+
+     [1;34m6[0m:   [32mdef[0m [1;34mcreate[0m
+     [1;34m7[0m:     header = { [35mauth_token[0m: session[[33m:auth_token[0m] }
+     [1;34m8[0m:     uri = URI([31m[1;31m'[0m[31mhttp://localhost:3000/tasks[1;31m'[0m[31m[0m)
+     [1;34m9[0m:     [1;34m#     uri.query = URI.encode_www_form({task: params[:email]})[0m
+    [1;34m10[0m:     [1;34m#     Net::HTTP.post_form(URL, parameters)[0m
+    [1;34m11[0m:     [1;34m#     a = Net::HTTP.get_response(uri)[0m
+    [1;34m12[0m:     answer = [1;34;4mNet[0m::[1;34;4mHTTP[0m.post(uri, task_params.to_query, header)
+    [1;34m13[0m:     result = [1;34;4mJSON[0m.parse(answer.body)
+ => [1;34m14[0m:     binding.pry
+    [1;34m15[0m:     [32mif[0m result[[31m[1;31m'[0m[31merror[1;31m'[0m[31m[0m]
+    [1;34m16[0m:       redirect_to tasks_path, [35mnotice[0m: [31m[1;31m'[0m[31mОшибка авторизации! Проверьте д[1;31m'[0m[31m[0m\
+    [1;34m17[0m: [31m[1;31m'[0m[31mанные и повторите попытку![1;31m'[0m[31m[0m
+    [1;34m18[0m:     [32melse[0m
+    [1;34m19[0m:       render [33m:index[0m
+    [1;34m20[0m:     [32mend[0m
+    [1;34m21[0m:   [32mend[0m
+

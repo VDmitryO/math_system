@@ -1,0 +1,45 @@
+<div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Линейное</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Квадратное</label>
+    <div class="login-form">
+      <div class="sign-in-htm">
+        <%= form_tag do %>
+            <div class="group">
+              <%= text_field_tag :a, nil, class: 'input2', pattern: '-?\d+(\.\d+)?', value: 0 %><p>x +</p>
+              <%= text_field_tag :b, nil, class: 'input2', pattern: '-?\d+(\.\d+)?', value: 0 %><p>=</p>
+              <%= text_field_tag :c, nil, class: 'input2', pattern: '-?\d+(\.\d+)?', value: 0 %>
+            </div>
+            <div class="group">
+              <%= submit_tag 'Решить', class: 'button'  %>
+            </div>
+        <% end %>
+        <% if session[:auth_token] %>
+            <div class="group">
+              <%= button_to 'Выход', exit_path, class: 'button' %>
+            </div>
+        <% end %>
+      </div>
+      <div class="sign-up-htm">
+        <%= form_tag do %>
+            <div class="group">
+              <%= text_field_tag :a, nil, class: 'input2', pattern: '-?\d+(\.\d+)?', value: 0 %><p>x<sup>2</sup> +</p>
+              <%= text_field_tag :b, nil, class: 'input2', pattern: '-?\d+(\.\d+)?', value: 0 %><p>x +</p>
+              <%= text_field_tag :c, nil, class: 'input2', pattern: '-?\d+(\.\d+)?', value: 0 %><p>=</p>
+              <%= text_field_tag :d, nil, class: 'input2', pattern: '-?\d+(\.\d+)?', value: 0 %>
+            </div>
+            <div class="group">
+              <%= submit_tag 'Решить', class: 'button'  %>
+            </div>
+        <% end %>
+        <% if session[:auth_token] %>
+            <div class="group">
+              <%= button_to 'Выход', exit_path, class: 'button' %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--</html>-->

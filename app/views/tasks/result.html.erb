@@ -1,0 +1,32 @@
+<div class="login-wrap">
+  <div class="login-html">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+    <label for="tab-1" class="tab">Результаты</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up">
+    <label for="tab-2" class="tab"></label>
+    <div class="login-form">
+      <div class="sign-in-htm">
+        <%= form_tag do %>
+            <% if params[:d]%>
+                <div class="group">
+                  <p>
+                    <%= params[:a] %>x<sup>2</sup> + <%= params[:b] %>x +
+                    <%= params[:c] %> = <%= params[:d] %>
+                  </p>
+                </div>
+            <% else %>
+                <div class="group">
+                  <p><%= params[:a] %>x + <%= params[:b] %> = <%= params[:c] %></p>
+                </div>
+            <% end %>
+            <div class="group">
+              <p><%= @message %></p>
+            </div>
+            <div class="group">
+              <%= link_to 'Назад', tasks_path, class: 'button' %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
